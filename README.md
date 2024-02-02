@@ -26,7 +26,11 @@ cd prm-backend
 npm start
 ```
 
-Copy the Strapi API key and paste it in the `.env` file
+Open `localhost:1337/admin`
+
+Signup and go to `Settings > API tokens > Create new API Token` and set the token type to `Full access`
+
+Copy the Strapi API token and paste it in the `.env` file
 
 In another terminal, run ngrok
 
@@ -43,3 +47,17 @@ npm start
 ```
 
 Open the Expo Go app, login to your account and scan the QR code to run the app natively on your mobile device
+
+## Screenshots
+
+1. Backend
+   <img src="./assets/backend.png" style="padding-top: 10px">
+
+2. Frontend
+
+-   Home Page
+    <img src="./assets/homepage.jpg" style="padding-top: 10px">
+
+-   Search Page
+    <img src="./assets/search1.jpg" style="padding-top: 10px">
+    <img src="./assets/search2.jpg" style="padding-top: 10px">
