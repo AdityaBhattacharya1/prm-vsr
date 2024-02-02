@@ -1,8 +1,9 @@
-import { View, Text, TextInput } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import globalAPI from '../services/globalAPI'
 import { useToast } from 'react-native-toast-notifications'
+import Colors from '../shared/Colors'
 
 const Profile = () => {
 	const [searchText, setSearchText] = useState('')
@@ -44,7 +45,7 @@ const Profile = () => {
 						borderRadius: 8,
 					}}
 				>
-					<AntDesign name="search1" size={24} color={'#000'} />
+					<AntDesign name="search1" size={24} color={Colors.black} />
 					<TextInput
 						placeholder="Search"
 						onChangeText={(value) => {
@@ -71,7 +72,7 @@ const Profile = () => {
 						<Text style={{ fontSize: 20 }}>
 							Patient ID: {patientData[0]?.attributes?.patientID}
 						</Text>
-						<Text style={{ color: '#000' }}>
+						<Text style={{ color: Colors.black }}>
 							Patient Name: {patientData[0]?.attributes?.Name}
 						</Text>
 						<View
@@ -84,7 +85,7 @@ const Profile = () => {
 						>
 							<Text
 								style={{
-									borderBottomColor: '#000',
+									borderBottomColor: Colors.black,
 									borderBottomWidth: 2,
 									fontSize: 15,
 								}}
@@ -93,6 +94,35 @@ const Profile = () => {
 							</Text>
 							<Text>{patientData[0]?.attributes?.Details}</Text>
 						</View>
+						<TouchableOpacity
+							style={{
+								padding: 13,
+								margin: 10,
+								borderRadius: 100,
+								left: 0,
+								right: 0,
+								marginBottom: 10,
+								zIndex: 20,
+								backgroundColor: Colors.primary,
+							}}
+							onPress={() =>
+								toast.show('Audio recording started.', {
+									type: 'normal',
+									placement: 'bottom',
+									duration: 2000,
+								})
+							}
+						>
+							<Text
+								style={{
+									color: '#fff',
+									textAlign: 'center',
+									fontSize: 17,
+								}}
+							>
+								Record Audio
+							</Text>
+						</TouchableOpacity>
 					</View>
 				) : (
 					<View

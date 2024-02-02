@@ -52,7 +52,7 @@ const Home = () => {
 				onSubmitEditing={() => setName(name)}
 				style={{
 					width: '100%',
-					borderColor: '#000',
+					borderColor: Colors.black,
 					borderWidth: 1,
 					borderRadius: 15,
 					paddingHorizontal: 10,
@@ -67,7 +67,7 @@ const Home = () => {
 				style={{
 					padding: 10,
 					borderRadius: 10,
-					borderColor: '#000',
+					borderColor: Colors.black,
 					borderWidth: 1,
 					textAlignVertical: 'top',
 				}}
